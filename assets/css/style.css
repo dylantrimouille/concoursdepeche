@@ -1,0 +1,24 @@
+.monLogo{
+    background-color: #22780f;
+}
+
+.monFooter{
+   background-color: #22780f;
+    height: 25px;
+    color: white;
+    font-size: 15px;
+}
+
+header{
+    height: 45vh;
+}
+
+footer{
+    height: 3vh;
+}
+
+main{
+    min-height: 52vh;
+    
+}
+
