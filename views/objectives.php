@@ -1,5 +1,5 @@
 <main>
-<h2 class="d-flex justify-content-center">Nos objectifs !</h2>
+<h2 class="d-flex justify-content-center mt-5">Nos objectifs !</h2>
 
 <div class="container-fluid">
     <div class="row">

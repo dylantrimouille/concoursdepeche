@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.25">
     <title>Concoursdepêche.fr - Le site référence des concours de pêche en France.</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/style-signup.css">
@@ -14,14 +14,14 @@
 </head>
 
 <body>
-    <header>
-        <div class="monLogo d-flex justify-content-center"><img src="/assets/img/CONCOURS2PÊCHE.png"
-                alt="Logo de concours2peche.fr"></div>
 
+    <header>
+        <img class="monLogo" src="/assets/img/bg-header.png" alt="Logo de concours2peche.fr">
 
         <!-- DEBUT DE MA BARRE DE NAVIGATION -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
+
                 <a class="navbar-brand" href="index-ctrl.php">Concours2Pêche.fr</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -46,8 +46,7 @@
                                 Concours
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="reservations-ctrl.php">Dates & Agenda</a></li>
-                                <li><a class="dropdown-item" href="reservations-ctrl.php">Reserver</a></li>
+                                <li><a class="dropdown-item" href="reservations-ctrl.php">Tous les concours</a></li>
                                 <li><a class="dropdown-item" href="rules-ctrl.php">Réglement</a></li>
                                 <li><a class="dropdown-item" href="results-ctrl.php">Résultats</a></li>
                                 <li><a class="dropdown-item" href="gallery-ctrl.php">Galerie Souvenirs</a></li>
@@ -94,6 +93,20 @@
                             <li><a class="dropdown-item" href="#">Pêcheurs Pro</a></li>
                         </ul>
                     </li> -->
+
+
+                                            <?php
+
+                    if(!isset($_SESSION['user'])){
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-success" href="signin-ctrl.php">
+                                Connexion
+                            </a>
+                        </li>
+                        <?php 
+                    }elseif($_SESSION['user']->role_id == 3){ 
+                        ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -104,10 +117,53 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-success" href="signin-ctrl.php">
-                                Connexion
+                            <a class="nav-link btn btn-outline-success" href="disconnect-ctrl.php">
+                                Déconnexion
                             </a>
                         </li>
+                        <?php 
+                    }elseif ($_SESSION['user']->role_id == 1){
+                        ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Espace Admin
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="account-ctrl.php">Mon compte</a></li>
+                                <li><a class="dropdown-item" href="admin-profile-ctrl.php">Espace Admin</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-success" href="disconnect-ctrl.php">
+                                Déconnexion
+                            </a>
+                        </li>
+                        <?php 
+                    }elseif ($_SESSION['user']->role_id == 2){
+                        ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Espace Organisateur
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="account-organizer-ctrl.php">Mon compte</a></li>
+                                <li><a class="dropdown-item" href="organizer-profile-ctrl.php">Espace Organisateur</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-success" href="disconnect-ctrl.php">
+                                Déconnexion
+                            </a>
+                        </li>
+                        <?php 
+                    }
+                    ?>
+
+
                         <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -122,14 +178,6 @@
                         </ul>
                     </li> -->
                     </ul>
-
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Rechercher une info"
-                            aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Recherche</button>
-                    </form>
-
-
                 </div>
             </div>
         </nav>

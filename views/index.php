@@ -1,16 +1,42 @@
-<main> 
-    <div class="d-flex justify-content-center"><img src="/assets/img/BIENVENUE.png" alt="Logo de bienvenue sur le site"></div>
+<main>
+    <h2 class=" d-flex justify-content-center mt-5">Bienvenue !</h2>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus nisi ea dicta, dolores aspernatur culpa! Alias voluptas ut autem sequi sit iste vel ea cupiditate id. Perferendis iure expedita voluptates!
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, dolorem at nobis iste accusamus illo ipsum id, modi, doloribus placeat autem officiis amet nulla aliquam tempora rem quos excepturi eos.
-        </div>
-        <div class="col">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ratione error eius iure ipsum neque molestias aspernatur possimus, rerum deleniti officia cupiditate voluptatem expedita omnis in? Eius, fuga error! Ipsum.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error est eum laboriosam deleniti exercitationem? Sint autem illo cumque recusandae hic et reiciendis, consequuntur aperiam repellendus architecto ipsum eaque corrupti repellat.
+    <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3 mb-3">
+            <div class="col">
+                <div class="card h-80 shadow-sm"> <img src="/assets/img/affiche-concours.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Ailly-Sur-Somme 80470 <br> Enduro Carpe 96h - NO KILL !!!</h5>
+                        <div class="text-center my-4"> <a href="#" class="btn btn-warning">Voir plus</a> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-80 shadow-sm"> <img src="/assets/img/affiche-concours.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Ailly-Sur-Somme 80470 <br> Enduro Carpe 96h - NO KILL !!!</h5>
+                        <div class="text-center my-4"> <a href="#" class="btn btn-warning">Voir plus</a> </div>
+                    </div>
+                </div>
+            </div>            <div class="col">
+                <div class="card h-80 shadow-sm"> <img src="/assets/img/affiche-concours.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Ailly-Sur-Somme 80470 <br> Enduro Carpe 96h - NO KILL !!!</h5>
+                        <div class="text-center my-4"> <a href="#" class="btn btn-warning">Voir plus</a> </div>
+                    </div>
+                </div>
+            </div>            <div class="col">
+                <div class="card h-80 shadow-sm"> <img src="/assets/img/affiche-concours.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Ailly-Sur-Somme 80470 <br> Enduro Carpe 96h - NO KILL !!!</h5>
+                        <div class="text-center my-4"> <a href="#" class="btn btn-warning">Voir plus</a> </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</main>  
+    <div class="text-center my-4"> <a href="reservations-ctrl.php" class="btn btn-warning btn-lg">Voir tous les concours</a> </div>
 
+
+    
+</main>
