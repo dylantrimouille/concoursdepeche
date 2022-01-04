@@ -1,8 +1,8 @@
-<div class="login-page"> <!-- Formulaire d'inscription -->
+<div class="login-page mt-5"> <!-- Formulaire d'inscription -->
     <div class="form">
         <form action="<?=htmlspecialChars($_SERVER['PHP_SELF'])?>" method="post" class="register-form">
-            <input type="text" name="lastname" placeholder="Nom"/>
-            <input type="text" name="firstname" placeholder="Prénom" />
+            <input type="text" name="lastname" placeholder="Nom" required pattern="<?=REGEXP_STR_NO_NUMBER?>"/>
+            <input type="text" name="firstname" placeholder="Prénom" required pattern="<?=REGEXP_STR_NO_NUMBER?>"/>
             <input type="phone" name="phone" placeholder="N° de téléphone (Optionnel)" />
             <input type="email" name="email" placeholder="Adresse E-Mail" />
             <input type="password" name="password" placeholder="Mot de passe" />

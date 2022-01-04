@@ -66,6 +66,38 @@ class Users{
     
     }
 
+// METHODE MAGIQUE "construct" qui permet d'hydrater la table "users" ORGANISATEUR.
+public function createOrganizer(){
+        
+    $sql = 'INSERT INTO `users` (`lastname`, `firstname`, `pseudo`, `phone`, `email`, `password`, `validated_token`, `role_id`)
+    VALUES (:lastname, :firstname, :pseudo, :phone, :email, :password, :validated_token, 2);';
+
+    try {
+        $sth = $this->_pdo->prepare($sql);
+        $sth->bindValue(':lastname', $this->_lastname);
+        $sth->bindValue(':firstname', $this->_firstname);
+        $sth->bindValue(':pseudo', $this->_pseudo);
+        $sth->bindValue(':phone', $this->_phone);
+        $sth->bindValue(':email', $this->_email);
+        $sth->bindValue(':password', $this->_password);
+        $sth->bindValue(':validated_token', $this->_validated_token);
+        if(!$sth->execute()){
+            throw new PDOException('Problème lors de l\'inscription');
+        }
+        return true;
+    } catch (\PDOException $ex) {
+        return $ex;
+    }
+
+}
+
+
+
+
+
+
+
+
     public function getValidatedToken(){
         return $this->_validated_token;
     }
@@ -212,13 +244,13 @@ public function delete($id){
 }
 
 /**
-     * Méthode qui permet de mettre à jour un patient
+     * Méthode qui permet de mettre à jour un utilisateur
      * 
      * @return boolean
      */
     public function update($id){
         try{
-            // On récupère le patient
+            // On récupère le utilisateur
             $response = $this::get($id);
             
             //Si la réponse est une erreur on sort via le catch
@@ -226,7 +258,7 @@ public function delete($id){
                 throw new PDOException($response->getMessage());
             }
 
-            // Si le mail n'existe pas en base ou que ça n'est pas déjà le mail du patient que l'on modifie
+            // Si le mail n'existe pas en base ou que ça n'est pas déjà le mail du utilisateur que l'on modifie
             // on a le droit de faire les modifs
             if(!$this->isValidated($this->_mail) || $this->_mail==$response->mail){
                 $sql = 'UPDATE `users` SET `lastname` = :lastname, `firstname` = :firstname, `phone` = :phone, `mail` = :mail

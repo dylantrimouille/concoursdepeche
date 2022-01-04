@@ -16,64 +16,65 @@
 <body>
 
     <header>
-        <img class="monLogo" src="/assets/img/bg-header.png" alt="Logo de concours2peche.fr">
+        
+            <img class="monLogo" src="/assets/img/bg-header.png" alt="Logo de concours2peche.fr">
 
-        <!-- DEBUT DE MA BARRE DE NAVIGATION -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
+            <!-- DEBUT DE MA BARRE DE NAVIGATION -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
 
-                <a class="navbar-brand" href="index-ctrl.php">Concours2Pêche.fr</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Présentation
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="about-ctrl.php">Qui sommes-nous ?</a></li>
-                                <li><a class="dropdown-item" href="objectives-ctrl.php">Nos objectifs !</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Concours
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="reservations-ctrl.php">Tous les concours</a></li>
-                                <li><a class="dropdown-item" href="rules-ctrl.php">Réglement</a></li>
-                                <li><a class="dropdown-item" href="results-ctrl.php">Résultats</a></li>
-                                <li><a class="dropdown-item" href="gallery-ctrl.php">Galerie Souvenirs</a></li>
+                    <a class="navbar-brand" href="index-ctrl.php">Concoursdepeche.fr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Présentation
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="about-ctrl.php">Qui sommes-nous ?</a></li>
+                                    <li><a class="dropdown-item" href="objectives-ctrl.php">Nos objectifs !</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Concours
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="reservations-ctrl.php">Tous les concours</a></li>
+                                    <li><a class="dropdown-item" href="rules-ctrl.php">Réglement</a></li>
+                                    <li><a class="dropdown-item" href="results-ctrl.php">Résultats</a></li>
+                                    <li><a class="dropdown-item" href="gallery-ctrl.php">Galerie Souvenirs</a></li>
 
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Billeterie
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="reservations-ctrl.php">Réserver ma place</a></li>
-                                <li><a class="dropdown-item" href="secure-payments-ctrl.php">Informations Paiement
-                                        Sécurisé</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="contact-ctrl.php" id="navbarDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Contact
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="contact-ctrl.php">Formulaire de contact</a></li>
-                            </ul>
-                        </li>
-                        <!-- <li class="nav-item dropdown">
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Billeterie
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="reservations-ctrl.php">Réserver ma place</a></li>
+                                    <li><a class="dropdown-item" href="secure-payments-ctrl.php">Informations Paiement
+                                            Sécurisé</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="contact-ctrl.php" id="navbarDropdown"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Contact
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="contact-ctrl.php">Formulaire de contact</a></li>
+                                </ul>
+                            </li>
+                            <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             F.A.Q
@@ -82,7 +83,7 @@
                             <li><a class="dropdown-item" href="#">Ici, toutes vos questions.</a></li>
                         </ul>
                     </li> -->
-                        <!-- <li class="nav-item dropdown">
+                            <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Pub & Sponsors
@@ -95,76 +96,77 @@
                     </li> -->
 
 
-                                            <?php
+                            <?php
 
                     if(!isset($_SESSION['user'])){
                     ?>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-outline-success" href="signin-ctrl.php">
-                                Connexion
-                            </a>
-                        </li>
-                        <?php 
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-success" href="signin-ctrl.php">
+                                    Connexion
+                                </a>
+                            </li>
+                            <?php 
                     }elseif($_SESSION['user']->role_id == 3){ 
                         ?>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Espace Membre
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="account-ctrl.php">Mon compte</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-outline-success" href="disconnect-ctrl.php">
-                                Déconnexion
-                            </a>
-                        </li>
-                        <?php 
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Espace Membre
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="account-ctrl.php">Mon compte</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-success" href="disconnect-ctrl.php">
+                                    Déconnexion
+                                </a>
+                            </li>
+                            <?php 
                     }elseif ($_SESSION['user']->role_id == 1){
                         ?>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Espace Admin
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="account-ctrl.php">Mon compte</a></li>
-                                <li><a class="dropdown-item" href="admin-profile-ctrl.php">Espace Admin</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Espace Admin
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="account-ctrl.php">Mon compte</a></li>
+                                    <li><a class="dropdown-item" href="admin-profile-ctrl.php">Espace Admin</a></li>
 
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-outline-success" href="disconnect-ctrl.php">
-                                Déconnexion
-                            </a>
-                        </li>
-                        <?php 
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-success" href="disconnect-ctrl.php">
+                                    Déconnexion
+                                </a>
+                            </li>
+                            <?php 
                     }elseif ($_SESSION['user']->role_id == 2){
                         ?>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Espace Organisateur
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="account-organizer-ctrl.php">Mon compte</a></li>
-                                <li><a class="dropdown-item" href="organizer-profile-ctrl.php">Espace Organisateur</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Espace Organisateur
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="account-organizer-ctrl.php">Mon compte</a></li>
+                                    <li><a class="dropdown-item" href="organizer-profile-ctrl.php">Espace
+                                            Organisateur</a></li>
 
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-outline-success" href="disconnect-ctrl.php">
-                                Déconnexion
-                            </a>
-                        </li>
-                        <?php 
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-success" href="disconnect-ctrl.php">
+                                    Déconnexion
+                                </a>
+                            </li>
+                            <?php 
                     }
                     ?>
 
 
-                        <!-- <li class="nav-item dropdown">
+                            <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Le portrait du mois
@@ -177,8 +179,9 @@
                             <li><a class="dropdown-item" href="#">Janvier 2022</a></li>
                         </ul>
                     </li> -->
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+        
         </nav>
     </header>

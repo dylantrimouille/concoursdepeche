@@ -1,5 +1,6 @@
 <?php
 require_once(dirname(__FILE__) . '/../models/Users.php');
+require_once(dirname(__FILE__) . '/../utils/init.php');
 
 
 // Initialisation du tableau d'erreurs

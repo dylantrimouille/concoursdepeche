@@ -1,9 +1,9 @@
 <footer class="text-center">
   <!-- Grid container -->
-  <div class="container p-4 pb-0">
+
     <!-- Section: Form -->
-    <section class="">
-      <form action="">
+    <section class="container p-4 pb-0">
+      <form>
         <!--Grid row-->
         <div class="row d-flex justify-content-center">
           <!--Grid column-->
@@ -36,7 +36,7 @@
       </form>
     </section>
     <!-- Section: Form -->
-  </div>
+
   <!-- Grid container -->
 
   <!-- Copyright -->
@@ -50,6 +50,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="/../../assets/js/script-signup.js"></script>
+
 </body>
 
-</html
+</html>

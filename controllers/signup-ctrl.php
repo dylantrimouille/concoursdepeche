@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__FILE__).'/../utils/regex.php');
+require_once(dirname(__FILE__).'/../config/regexp.php');
 require_once(dirname(__FILE__) . '/../utils/init.php');
 require_once(dirname(__FILE__) . '/../utils/database.php');
 require_once(dirname(__FILE__) . '/../models/Users.php');
@@ -9,23 +9,18 @@ require_once(dirname(__FILE__) . '/../class/Mail.php');
 $error = [];
 if ($_SERVER['REQUEST_METHOD']=='POST') {
 
-    $firstname = trim(filter_input(INPUT_POST, 'firstname'));  
-    if (!preg_match(REGEX_NO_NUMBER,$firstname)) {
-       $error['firstname'] ='Le format n\'est pas bon !';    
-    }
-
     $lastname = trim(filter_input(INPUT_POST, 'lastname'));     
-    if (!preg_match(REGEX_NO_NUMBER,$lastname)) {
+    if (!preg_match(REGEXP_STR_NO_NUMBER,$lastname)) {
        $error['lastname'] = 'Le format n\'est pas bon !';    
     }
 
-    $pseudo = trim(filter_input(INPUT_POST, 'pseudo'));  
-    if (!preg_match(REGEX_PSEUDO,$pseudo)) {
-       $error['pseudo'] ='Le format n\'est pas bon !';    
-    }
+    $firstname = trim(filter_input(INPUT_POST, 'firstname'));  
+    if (!preg_match(REGEXP_STR_NO_NUMBER,$firstname)) {
+       $error['firstname'] ='Le format n\'est pas bon !';    
+    }  
 
     $phone = trim(filter_input(INPUT_POST, 'phone'));
-    if (!preg_match(REGEX_NUMBER,$phone)) {
+    if (!preg_match(REGEXP_PHONE,$phone)) {
         $error['phone'] = 'Le format n\'est pas bon !';
     }
 
@@ -57,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
     if(empty($errorsArray)){
         $pdo = Database::getInstance();
-        $users = new Users($lastname,$firstname,$pseudo,$phone,$email,$passwordHash);
+        $users = new Users($lastname,$firstname,$phone,$email,$passwordHash);
         $response = $users->create();
         $id = $pdo->lastInsertId();
         $token = $users->getValidatedToken();

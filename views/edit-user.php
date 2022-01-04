@@ -1,4 +1,4 @@
-<div class="login-page"> <!-- Formulaire de modif -->
+<div class="login-page mt-5"> <!-- Formulaire de modif -->
     <div class="form">
         <form action="<?=htmlspecialChars($_SERVER['PHP_SELF'])?>" method="post" class="register-form">
             <input type="text" name="lastname" placeholder="Nom" value="<?=$response->lastname?>"/>
