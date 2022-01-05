@@ -104,6 +104,7 @@
                                 <a class="nav-link btn btn-outline-success" href="signin-ctrl.php">
                                     Connexion
                                 </a>
+
                             </li>
                             <?php 
                     }elseif($_SESSION['user']->role_id == 3){ 

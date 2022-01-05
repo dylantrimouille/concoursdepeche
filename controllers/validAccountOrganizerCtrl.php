@@ -1,20 +1,20 @@
 <?php
 require_once(dirname(__FILE__) . '/../utils/init.php');
 require_once(dirname(__FILE__).'/../config/regexp.php');
-require_once(dirname(__FILE__) . '/../models/Users.php');
+require_once(dirname(__FILE__) . '/../models/Organizers.php');
 
 $id = intval(trim(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT)));
 
 $get_token = trim(filter_input(INPUT_GET, 'token', FILTER_SANITIZE_STRING));
 
-$users = Users::get($id);
-$validated_token = $users->validated_token;
+$organizers = Organizers::get($id);
+$validated_token = $organizers->validated_token;
 
 
 if($get_token == $validated_token){
-    $response = Users::setValidateAccount($id);
+    $response = Organizers::setValidateAccount($id);
     if($response === true){
-        $nbRows = Users::deleteToken($id);
+        $nbRows = Organizers::deleteToken($id);
         if($nbRows==0){
             $message = 'Votre compte a déjà été validé';
         } else {

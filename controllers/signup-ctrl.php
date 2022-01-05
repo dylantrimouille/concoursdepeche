@@ -9,20 +9,40 @@ require_once(dirname(__FILE__) . '/../class/Mail.php');
 $error = [];
 if ($_SERVER['REQUEST_METHOD']=='POST') {
 
-    $lastname = trim(filter_input(INPUT_POST, 'lastname'));     
-    if (!preg_match(REGEXP_STR_NO_NUMBER,$lastname)) {
-       $error['lastname'] = 'Le format n\'est pas bon !';    
+    // lastname : Nettoyage et validation
+    $lastname = trim(filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
+
+    if(!empty($lastname)){
+        $testRegex = preg_match('/'.REGEXP_STR_NO_NUMBER.'/',$lastname);
+        if(!$testRegex){
+            $error["lastname"] = "Le prénom n'est pas au bon format!!"; 
+        } else {
+            if(strlen($lastname)<=1 || strlen($lastname)>=70){
+                $error["lastname"] = "La longueur de chaine n'est pas bonne";
+            }
+        }
     }
 
-    $firstname = trim(filter_input(INPUT_POST, 'firstname'));  
-    if (!preg_match(REGEXP_STR_NO_NUMBER,$firstname)) {
-       $error['firstname'] ='Le format n\'est pas bon !';    
-    }  
+    // firstname : Nettoyage et validation
+    $firstname = trim(filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
 
-    $phone = trim(filter_input(INPUT_POST, 'phone'));
-    if (!preg_match(REGEXP_PHONE,$phone)) {
-        $error['phone'] = 'Le format n\'est pas bon !';
+    if(!empty($firstname)){
+        $testRegex = preg_match('/'.REGEXP_STR_NO_NUMBER.'/',$firstname);
+        if(!$testRegex){
+            $error["firstname"] = "Le prénom n'est pas au bon format!!"; 
+        } else {
+            if(strlen($firstname)<=1 || strlen($firstname)>=70){
+                $error["firstname"] = "La longueur de chaine n'est pas bonne";
+            }
+        }
     }
+
+     $phone = trim(filter_input(INPUT_POST, 'phone'));
+     if (!preg_match('/'.REGEXP_PHONE.'/',$phone)) {
+         $error['phone'] = 'Le format n\'est pas bon !';
+     }
+
+
 
     $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
     //On verifie que ce n'est pas vide
@@ -36,8 +56,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     } else{
         $error['email'] = "Ce champ est requis!";
         }
+       
+        
 
-    // CONDITIONS EMAIL
+   
 
 
 // PASSWORD
@@ -66,11 +88,11 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             $toName = $lastname;
 
             $link = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/controllers/validAccountCtrl.php?id='.$id.'&token='.$token;
-            $message = "Bonjour $lastname<br>Merci! Veuillez confirmer en <a href=\"$link\">cliquant ici</a>";
+            $message = "Bonjour ". $lastname . "<br>Merci! Veuillez confirmer en <a href=\"$link\">cliquant ici</a>";
 
             $mail = new Mail($message,$to,$from,$subject,$fromName,$toName);
             $mail->send();
-            
+            var_dump($error);
     }
 
 }

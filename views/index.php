@@ -1,7 +1,8 @@
 <main>
-    <h2 class="title d-flex justify-content-center mt-5">Bienvenue !</h2>
+    
 
     <div class="container-fluid bg-trasparent my-4 p-3 title" style="position: relative;">
+    <h2 class="title d-flex justify-content-center mb-5">Bienvenue !</h2>
         <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3 mb-3">
             <div class="col">
                 <div class="card h-80 shadow-sm"> <img src="/assets/img/affiche-concours.png" class="card-img-top"

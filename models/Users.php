@@ -7,7 +7,7 @@ class Users{
     private $_user_id;
     private $_lastname;
     private $_firstname;
-    private $_pseudo;
+
     private $_phone;
     private $_email;
     private $_password;
@@ -19,7 +19,7 @@ class Users{
 
     public function __construct(    $lastname = null,
                                     $firstname = null,
-                                    $pseudo = null,
+                                 
                                     $phone = null,
                                     $email = null,
                                     $password = null,
@@ -29,7 +29,6 @@ class Users{
 
         $this->_lastname = $lastname; 
         $this->_firstname = $firstname; 
-        $this->_pseudo = $pseudo; 
         $this->_phone = $phone; 
         $this->_email = $email; 
         $this->_password = $password; 
@@ -44,14 +43,13 @@ class Users{
 // METHODE MAGIQUE "construct" qui permet d'hydrater la table "users".
     public function create(){
         
-        $sql = 'INSERT INTO `users` (`lastname`, `firstname`, `pseudo`, `phone`, `email`, `password`, `validated_token`, `role_id`)
-        VALUES (:lastname, :firstname, :pseudo, :phone, :email, :password, :validated_token, 3);';
+        $sql = 'INSERT INTO `users` (`lastname`, `firstname`, `phone`, `email`, `password`, `validated_token`, `role_id`)
+        VALUES (:lastname, :firstname, :phone, :email, :password, :validated_token, 3);';
     
         try {
             $sth = $this->_pdo->prepare($sql);
             $sth->bindValue(':lastname', $this->_lastname);
             $sth->bindValue(':firstname', $this->_firstname);
-            $sth->bindValue(':pseudo', $this->_pseudo);
             $sth->bindValue(':phone', $this->_phone);
             $sth->bindValue(':email', $this->_email);
             $sth->bindValue(':password', $this->_password);
@@ -65,31 +63,6 @@ class Users{
         }
     
     }
-
-// METHODE MAGIQUE "construct" qui permet d'hydrater la table "users" ORGANISATEUR.
-public function createOrganizer(){
-        
-    $sql = 'INSERT INTO `users` (`lastname`, `firstname`, `pseudo`, `phone`, `email`, `password`, `validated_token`, `role_id`)
-    VALUES (:lastname, :firstname, :pseudo, :phone, :email, :password, :validated_token, 2);';
-
-    try {
-        $sth = $this->_pdo->prepare($sql);
-        $sth->bindValue(':lastname', $this->_lastname);
-        $sth->bindValue(':firstname', $this->_firstname);
-        $sth->bindValue(':pseudo', $this->_pseudo);
-        $sth->bindValue(':phone', $this->_phone);
-        $sth->bindValue(':email', $this->_email);
-        $sth->bindValue(':password', $this->_password);
-        $sth->bindValue(':validated_token', $this->_validated_token);
-        if(!$sth->execute()){
-            throw new PDOException('Problème lors de l\'inscription');
-        }
-        return true;
-    } catch (\PDOException $ex) {
-        return $ex;
-    }
-
-}
 
 
 

@@ -6,7 +6,7 @@
       <div class="col-12 d-flex justify-content-center">
         Nous sommes une équipe de pêcheur amateur, désirant mettre en avant le côté compétitif de la pêche sportive.
       </div>
-      <h4 class="col-12 d-flex justify-content-center mt-5">/!\ Page en construction /!\</h4>
+      
     </div>
   </div>
 </main>
