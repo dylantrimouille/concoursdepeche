@@ -12,12 +12,12 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group"> <label for="form_name">Prénom</label> <input id="form_name" type="text"
-                          name="name" class="form-control" placeholder="Entrez votre prénom." required="required"
+                          name="firstname" class="form-control" placeholder="Entrez votre prénom." required="required"
                           data-error="Votre prénom est requis."> </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group"> <label for="form_lastname">Nom</label> <input id="form_lastname"
-                          type="text" name="surname" class="form-control" placeholder="Entrez votre nom."
+                          type="text" name="lastname" class="form-control" placeholder="Entrez votre nom."
                           required="required" data-error="Votre nom est requis."> </div>
                     </div>
                   </div>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group"> <label for="form_need">Objet de votre demande</label> <select
-                          id="form_need" name="need" class="form-control" required="required"
+                          id="form_need" name="object" class="form-control" required="required"
                           data-error="Spécifiez votre demande.">
                           <option value="" selected disabled>--Selectionnez un choix--</option>
                           <option>Une question</option>
@@ -57,3 +57,4 @@
     </div>
   </div>
 </div>
+

@@ -7,8 +7,12 @@ require_once(dirname(__FILE__) . '/../class/Mail.php');
 
 // S'INSCRIRE
 $error = [];
+$message;
+
+
 if ($_SERVER['REQUEST_METHOD']=='POST') {
 
+    
     // lastname : Nettoyage et validation
     $lastname = trim(filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
 
@@ -37,6 +41,27 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         }
     }
 
+
+    $role_id = intval($_POST['role_id']);
+
+    // pseudo : Nettoyage et validation
+    $pseudo = trim(filter_input(INPUT_POST, 'pseudo', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
+
+    if(!empty($pseudo)){
+        $testRegex = preg_match('/'.REGEXP_STR_NO_NUMBER.'/',$pseudo);
+        if(!$testRegex){
+            $error["pseudo"] = "Le nom de l'organisation n'est pas au bon format!!"; 
+        } else {
+            if(strlen($pseudo)<=1 || strlen($pseudo)>=70){
+                $error["pseudo"] = "La longueur de chaine n'est pas bonne";
+            }
+        }
+    }
+ 
+
+
+
+
      $phone = trim(filter_input(INPUT_POST, 'phone'));
      if (!preg_match('/'.REGEXP_PHONE.'/',$phone)) {
          $error['phone'] = 'Le format n\'est pas bon !';
@@ -56,10 +81,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
     } else{
         $error['email'] = "Ce champ est requis!";
         }
-       
-        
-
-   
 
 
 // PASSWORD
@@ -72,9 +93,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
     }
 
-    if(empty($errorsArray)){
+    if(empty($error)){
         $pdo = Database::getInstance();
-        $users = new Users($lastname,$firstname,$phone,$email,$passwordHash);
+        $users = new Users($lastname,$firstname,$pseudo,$phone,$email,$passwordHash,$role_id);
         $response = $users->create();
         $id = $pdo->lastInsertId();
         $token = $users->getValidatedToken();
@@ -88,15 +109,16 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             $toName = $lastname;
 
             $link = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/controllers/validAccountCtrl.php?id='.$id.'&token='.$token;
-            $message = "Bonjour ". $lastname . "<br>Merci! Veuillez confirmer en <a href=\"$link\">cliquant ici</a>";
+            $message = "Bonjour ". $lastname . ' ' . $firstname . "<br>Merci pour votre inscription !<br>Veuillez confirmer votre inscription en <a href=\"$link\">cliquant ici !</a>";
 
             $mail = new Mail($message,$to,$from,$subject,$fromName,$toName);
             $mail->send();
-            var_dump($error);
+            
+    }else{
+        $message=$response;
     }
-
 }
-
+var_dump($users);
 
 }
 

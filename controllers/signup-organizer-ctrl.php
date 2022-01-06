@@ -86,12 +86,12 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
     }
 
-    if(empty($errorsArray)){
+    if(empty($error)){
         $pdo = Database::getInstance();
-        $organizers = new Organizers($lastname,$firstname,$pseudo,$phone,$email,$passwordHash);
-        $response = $organizers->createOrganizer();
+        $users = new Organizers($lastname,$firstname,$pseudo,$phone,$email,$passwordHash);
+        $response = $users->createOrganizer();
         $id = $pdo->lastInsertId();
-        $token = $organizers->getValidatedToken();
+        $token = $users->getValidatedToken();
 
         if($response === true){
 
@@ -102,13 +102,13 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             $toName = $lastname;
 
             $link = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/controllers/validAccountOrganizerCtrl.php?id='.$id.'&token='.$token;
-            $message = "Bonjour ". $lastname . "<br>Merci!<br>Veuillez confirmer en <a href=\"$link\">cliquant ici !</a>";
+            $message = "Bonjour ". $lastname . ' ' . $firstname . "<br>Merci pour votre inscription !<br>Veuillez confirmer votre inscription en <a href=\"$link\">cliquant ici !</a>";
 
             $mail = new Mail($message,$to,$from,$subject,$fromName,$toName);
             $mail->send();
-            var_dump($error);
+            
     }
-
+    var_dump($error);
 }
 
 

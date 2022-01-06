@@ -5,7 +5,7 @@ require_once(dirname(__FILE__) . '/../models/Users.php');
 
 
 // Initialisation du tableau d'erreurs
-$errorsArray = array();
+$error = array();
 /*************************************/
 
 // Nettoyage de l'id passé en GET dans l'url
@@ -30,10 +30,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if(!empty($lastname)){
         if(!$isOk){
-            $errorsArray['lastname_error'] = 'Merci de choisir un nom valide';
+            $error['lastname_error'] = 'Merci de choisir un nom valide';
         }
     }else{
-        $errorsArray['lastname_error'] = 'Le champ est obligatoire';
+        $error['lastname_error'] = 'Le champ est obligatoire';
     }
     // ***************************************************************
 
@@ -44,10 +44,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if(!empty($firstname)){
         if(!$isOk){
-            $errorsArray['firstname_error'] = 'Le prénom n\'est pas valide';
+            $error['firstname_error'] = 'Le prénom n\'est pas valide';
         }
     }else{
-        $errorsArray['firstname_error'] = 'Le champ est obligatoire';
+        $error['firstname_error'] = 'Le champ est obligatoire';
     }
     // ***************************************************************
 
@@ -58,10 +58,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if(!empty($birthdate)){
         if(!$isOk){
-            $errorsArray['birthdate_error'] = 'Le date n\'est pas valide, le format attendu est JJ/MM/AAAA';
+            $error['birthdate_error'] = 'Le date n\'est pas valide, le format attendu est JJ/MM/AAAA';
         }
     }else{
-        $errorsArray['birthdate_error'] = 'Le champ est obligatoire';
+        $error['birthdate_error'] = 'Le champ est obligatoire';
     }
 
     // ***************************************************************
@@ -73,7 +73,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if(!empty($phone)){
         if(!$isOk){
-            $errorsArray['phone_error'] = 'Le numero n\'est pas valide, les séparateur sont - . /';
+            $error['phone_error'] = 'Le numero n\'est pas valide, les séparateur sont - . /';
         }
     }
     // ***************************************************************
@@ -85,15 +85,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if(!empty($mail)){
         if(!$isOk){
-            $errorsArray['mail_error'] = 'Le mail n\'est pas valide';
+            $error['mail_error'] = 'Le mail n\'est pas valide';
         }
     }else{
-        $errorsArray['mail_error'] = 'Le champ est obligatoire';
+        $error['mail_error'] = 'Le champ est obligatoire';
     }
     // ***************************************************************
 
     // Si il n'y a pas d'erreurs, on met à jour le patient.
-    if(empty($errorsArray) ){    
+    if(empty($error) ){    
         $user = new Users($lastname, $firstname, $birthdate, $phone, $mail);
         $response = $user->update($id);
         // Si $response appartient à la classe PDOException (Si une exception est retournée),

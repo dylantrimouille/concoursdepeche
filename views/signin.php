@@ -5,9 +5,9 @@
             <input type="mail" name="email" placeholder="E-Mail" required/>
             <input type="password" name="password" placeholder="Mot de passe" required/>
             <button class="mb-3" type="submit" >Se connecter !</button>
-            <button type="submit"><a href="signin-organizers-ctrl.php">Connexion Organisateur</button>
+            <!-- <button type="submit"><a href="signin-organizers-ctrl.php">Connexion Organisateur</button> -->
             <p class="message">Pas encore inscrit ? <a href="signup-ctrl.php">Créer un compte !</a></p>
-            <p class="message">Je suis organisateur ! <a href="signup-organizer-ctrl.php">Créer un compte !</a></p>
+            <!-- <p class="message">Je suis organisateur ! <a href="signup-organizer-ctrl.php">Créer un compte !</a></p> -->
             <p class="message"><a href="lostpassword-ctrl.php">Mot de passe oublié ?</a></p></p>
         </form>
     </div>

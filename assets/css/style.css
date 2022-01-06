@@ -18,8 +18,7 @@ main{
 
 
 
-
-@media screen and(max-width: 500px){
+/* @media screen and(max-width: 576px){
     .monLogo{
         max-width: 80%;
       }
@@ -34,7 +33,7 @@ main{
         height: 10%;
     }
     
-    
+
     .card{
         max-width: 70%;
         }
@@ -48,7 +47,7 @@ main{
         max-width: 100%;
     }
     
-}
+} */
 
 body{
     box-sizing: border-box;
