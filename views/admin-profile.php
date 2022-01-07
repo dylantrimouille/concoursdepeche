@@ -39,7 +39,7 @@
                     <td><?=$user->email?></td>
                     <td><?=$user->archived_at?></td>
                     <td><button type="button" class="btn btn-success btn-lg"><a href="/../controllers/edit-user-ctrl.php?id=<?=$user->user_id?>">+</a></button></td>
-                    <td><button type="button" class="btn btn-danger btn-lg"><a href="/../controllers/delete-user-ctrl.php?id=<?=$user->user_id?>">-</a></button></td>
+                    <td><button type="button" class="btn btn-danger btn-lg"><a href="/../controllers/account-ctrl.php?id=<?=$user->user_id?>">-</a></button></td>
                 </tr>
             </tbody>
             <?php } ?>

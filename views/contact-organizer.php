@@ -48,8 +48,8 @@
                                                     rows="4" required="required"
                                                     data-error="Veuillez nous laisser un message."></textarea> </div>
                                         </div>
-                                        <div class="col-md-12"> <input type="submit"
-                                                class="btn btn-success btn-send pt-2 btn-block btn-lg" value="SOUMETTRE"> </div>
+                                         <input type="submit"
+                                                class="btn btn-lg btn-success btn-send mt-3 btn-block" value="SOUMETTRE"> 
                                     </div>
                                 </div>
                             </form>

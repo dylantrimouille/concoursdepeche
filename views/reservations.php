@@ -1,7 +1,7 @@
 <main>
 
 
-    <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+    <div class="container-fluid bg-trasparent my-4 p-3">
         <h1 class=" d-flex justify-content-center mt-5 border border-2 rounded-3 py-5">Tous les concours !</h1>
 
         <h3 class=" d-flex justify-content-center mt-5">Les concours en cours ... &darr;</h3>
@@ -109,7 +109,7 @@
     <div class="container-fluid">
     <h3 class=" d-flex justify-content-center mt-5">Les concours à venir ... &darr;</h3>
 
-    <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+    <div class="container-fluid bg-trasparent my-4 p-3">
         <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3 mb-3">
             <div class="col">
                 <div class="card h-80 shadow-sm"> <img src="/assets/img/affiche-concours.png" class="card-img-top"
@@ -208,7 +208,7 @@
     <div class="container-fluid">
     <h3 class=" d-flex justify-content-center mt-5">Les concours terminés &darr;</h3>
 
-    <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+    <div class="container-fluid bg-trasparent my-4 p-3">
         <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3 mb-3">
             <div class="col">
                 <div class="card h-80 shadow-sm"> <img src="/assets/img/affiche-concours.png" class="card-img-top"

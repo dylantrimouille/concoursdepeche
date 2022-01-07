@@ -239,8 +239,8 @@ public function delete($id){
 
             // Si le mail n'existe pas en base ou que ça n'est pas déjà le mail du utilisateur que l'on modifie
             // on a le droit de faire les modifs
-            if(!$this->isValidated($this->_mail) || $this->_mail==$response->mail){
-                $sql = 'UPDATE `users` SET `lastname` = :lastname, `firstname` = :firstname, `pseudo` = :pseudo, `phone` = :phone, `mail` = :mail
+            if(!$this->isValidated($this->_email) || $this->_email==$response->email){
+                $sql = 'UPDATE `users` SET `lastname` = :lastname, `firstname` = :firstname, `pseudo` = :pseudo, `phone` = :phone, `email` = :email
                         WHERE `user_id` = :user_id;';
 
                 $sth = $this->_pdo->prepare($sql);
@@ -248,7 +248,7 @@ public function delete($id){
                 $sth->bindValue(':firstname',$this->_firstname,PDO::PARAM_STR);
                 $sth->bindValue(':pseudo',$this->_pseudo,PDO::PARAM_STR);
                 $sth->bindValue(':phone',$this->_phone,PDO::PARAM_STR);
-                $sth->bindValue(':mail',$this->_mail,PDO::PARAM_STR);
+                $sth->bindValue(':email',$this->_email,PDO::PARAM_STR);
                 $sth->bindValue(':user_id',$id,PDO::PARAM_INT);
                 $result = $sth->execute();
 

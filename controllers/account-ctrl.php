@@ -4,15 +4,21 @@ require_once(dirname(__FILE__) . '/../config/regexp.php');
 require_once(dirname(__FILE__) . '/../models/Users.php');
 
 
+$user_id = $_SESSION['user']->user_id;
+$id = intval(trim(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT)));
+$users = new Users();
+$delete = $users->delete($id);
+
+
 // Initialisation du tableau d'erreurs
 $error = array();
 /*************************************/
 
 // Nettoyage de l'id passé en GET dans l'url
-$id = intval(trim(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT)));
+// $id = intval(trim(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT)));
 /*************************************************************/
 
-$response = Users::get($id);
+$response = Users::get($user_id);
 // Si $response appartient à la classe PDOException (Si une exception est retournée),
 // on stocke un message d'erreur à afficher dans la vue
 if($response instanceof PDOException){
@@ -51,18 +57,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     // ***************************************************************
 
-    // DATE D'ANNIVERSAIRE *******************************************
-    // Nettoyage et vérification
-    $birthdate = trim(filter_input(INPUT_POST, 'birthdate', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
-    $isOk = filter_var($birthdate, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>'/'.REGEXP_DATE.'/')));
 
-    if(!empty($birthdate)){
-        if(!$isOk){
-            $error['birthdate_error'] = 'Le date n\'est pas valide, le format attendu est JJ/MM/AAAA';
-        }
-    }else{
-        $error['birthdate_error'] = 'Le champ est obligatoire';
-    }
+    // pseudo******************************************************
+    // Nettoyage et vérification
+    $pseudo = trim(filter_input(INPUT_POST, 'pseudo', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
+    $isOk = filter_var($pseudo, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>'/'.REGEXP_STR_NO_NUMBER.'/')));
+
+    // if(!empty($pseudo)){
+    //     if(!$isOk){
+    //         $error['pseudo'] = 'Le nom de l\'organisation n\'est pas valide';
+    //     }
+    // }else{
+    //     $error['pseudo'] = 'Le champ est obligatoire';
+    // }
+    
 
     // ***************************************************************
 
@@ -94,8 +102,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     // Si il n'y a pas d'erreurs, on met à jour le patient.
     if(empty($error) ){    
-        $user = new Users($lastname, $firstname, $birthdate, $phone, $mail);
-        $response = $user->update($id);
+        $user = new Users($lastname, $firstname, $pseudo, $phone, $mail);
+        $response = $user->update($user_id);
         // Si $response appartient à la classe PDOException (Si une exception est retournée),
         // on stocke un message d'erreur à afficher dans la vue
         if($response instanceof PDOException){
@@ -103,9 +111,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         } else {
             $message = MSG_UPDATE_PATIENT_OK;
         }
+        
     }
     
 }
+
+
+
+$user = Users::get($user_id);
+$id = $user->user_id;
+
 
 /* ************* AFFICHAGE DES VUES **************************/
 

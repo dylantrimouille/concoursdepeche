@@ -151,8 +151,8 @@
                                     Espace Organisateur
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="account-organizer-ctrl.php">Mon compte</a></li>
-                                    <li><a class="dropdown-item" href="organizer-profile-ctrl.php">Espace
+                                    <li><a class="dropdown-item" href="account-ctrl.php">Mon compte</a></li>
+                                    <li><a class="dropdown-item" href="contact-organizer-ctrl.php">Espace
                                             Organisateur</a></li>
 
                                 </ul>

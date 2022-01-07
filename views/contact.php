@@ -3,7 +3,7 @@
   <h4 class="text-center">Nous donnerons suite à votre demande dans les 48h maximum.</h4>
   <div class="container">
     <div class="row ">
-      <div class="col-lg-7 mx-auto">
+      <div class="col-lg-6 mx-auto">
         <div class="card mt-2 mx-auto p-4 bg-light">
           <div class="card-body bg-light">
             <div class="container">
@@ -45,8 +45,8 @@
                           name="message" class="form-control" placeholder="Ecrivez votre message ici." rows="4"
                           required="required" data-error="Please, leave us a message."></textarea> </div>
                     </div>
-                    <div class="col-md-12"> <input type="submit" class="btn btn-success btn-send pt-2 btn-block"
-                        value="Envoyer"> </div>
+                     <input type="submit" class="btn btn-lg btn-success btn-send mt-3"
+                        value="Envoyer"> 
                   </div>
                 </div>
               </form>

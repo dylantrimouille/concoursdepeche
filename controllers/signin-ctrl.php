@@ -32,17 +32,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if(!is_null($isValidatedUser)){
         $user = Users::getByEmail($email);
+        
         $hash = $user->password;
         
         $isVerified = password_verify($password, $hash);
         if($isVerified === true){
             $_SESSION['user'] = $user; 
-            //header('location: /controllers/HomeCtrl.php');
+            header('location: /controllers/index-ctrl.php');
         } else {
-            $error['global'] = 'Votre mot de passe n\'est pas bon!';
+            $error['global_error'] = 'Votre mot de passe n\'est pas bon!';
         }
     } else {
-        $error['global'] = 'Votre compte n\'est pas encore validé!';
+        $error['global_error'] = 'Votre compte n\'est pas encore validé!';
     }
 
 }

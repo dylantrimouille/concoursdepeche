@@ -1,7 +1,7 @@
 <main>
     
 
-    <div class="container-fluid bg-trasparent my-4 p-3 title" style="position: relative;">
+    <div class="container-fluid bg-trasparent my-4 p-3 title">
     <h2 class="title d-flex justify-content-center mb-5">Bienvenue !</h2>
         <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3 mb-3">
             <div class="col">
