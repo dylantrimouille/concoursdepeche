@@ -18,7 +18,7 @@
                 <div class="card h-80 shadow-sm"> <img src="/assets/img/affiche-concours.png" class="card-img-top"
                         alt="...">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Ailly-Sur-Somme 80470 <br> Enduro Carpe 96h - NO KILL !!!
+                        <h5 class="card-title text-center">St-Sauveur 80470 <br> Enduro Carpe 96h - NO KILL !!!
                         </h5>
                         <div class="text-center my-4"> <a href="#" class="btn btn-warning">Voir plus</a> </div>
                     </div>
@@ -28,7 +28,7 @@
                 <div class="card h-80 shadow-sm"> <img src="/assets/img/affiche-concours.png" class="card-img-top"
                         alt="...">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Ailly-Sur-Somme 80470 <br> Enduro Carpe 96h - NO KILL !!!
+                        <h5 class="card-title text-center">Argoeuves 80470 <br> Enduro Carpe 96h - NO KILL !!!
                         </h5>
                         <div class="text-center my-4"> <a href="#" class="btn btn-warning">Voir plus</a> </div>
                     </div>
