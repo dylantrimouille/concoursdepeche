@@ -8,7 +8,7 @@
             <input type="email" name="email" placeholder="Adresse E-Mail" value="<?= $_SESSION['user']->email?>"/>
             <input type="password" name="password" placeholder="Mot de passe" />
             <input type="password" name="confirmPassword" placeholder="Confirmer le mot de passe" />
-           <input type="submit" name="inscription" value="Créer mon compte !" id="register">
+           <input type="submit" name="inscription" value="MODIFIER ET ENREGISTRER" id="register">
             <p class="message">Déjà inscrit ? <a href="signin-ctrl.php">Connectez-vous !</a></p>
         </form>
     </div>

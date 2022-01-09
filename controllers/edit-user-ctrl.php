@@ -23,45 +23,62 @@ if($response instanceof PDOException){
 //On ne controle que s'il y a des données envoyées 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-    // lastname******************************************************
-    // Nettoyage et vérification
+    // lastname (nom de famille) : Nettoyage et validation des données.
     $lastname = trim(filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
-    $isOk = filter_var($lastname, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>'/'.REGEXP_STR_NO_NUMBER.'/')));
 
     if(!empty($lastname)){
+        $isOk = preg_match('/'.REGEXP_STR_NO_NUMBER.'/',$lastname);
         if(!$isOk){
-            $error['lastname_error'] = 'Merci de choisir un nom valide';
+            $error["lastname_error"] = "Le nom n'est pas au bon format!!"; 
+        } else {
+            if(strlen($lastname)<=1 || strlen($lastname)>=100){
+                $error["lastname_error"] = "La longueur de chaine n'est pas bonne";
+            }
         }
-    }else{
-        $error['lastname_error'] = 'Le champ est obligatoire';
     }
     // ***************************************************************
 
-    // FIRSTNAME******************************************************
-    // Nettoyage et vérification
+
+    // firstname (prénom) : Nettoyage et validation des données.
     $firstname = trim(filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
-    $isOk = filter_var($firstname, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>'/'.REGEXP_STR_NO_NUMBER.'/')));
 
     if(!empty($firstname)){
+        $isOk = preg_match('/'.REGEXP_STR_NO_NUMBER.'/',$firstname);
         if(!$isOk){
-            $error['firstname_error'] = 'Le prénom n\'est pas valide';
-        }
-    }else{
-        $error['firstname_error'] = 'Le champ est obligatoire';
-    }
-    // ***************************************************************
-
-    // TELEPHONE******************************************************
-    // Nettoyage et vérification
-    $phone = trim(filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
-    $isOk = filter_var($phone, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>'/'.REGEXP_PHONE.'/')));
-
-    if(!empty($phone)){
-        if(!$isOk){
-            $error['phone_error'] = 'Le numero n\'est pas valide, les séparateur sont - . /';
+            $error["firstname_error"] = "Le prénom n'est pas au bon format!!"; 
+        } else {
+            if(strlen($firstname)<=1 || strlen($firstname)>=100){
+                $error["firstname_error"] = "La longueur de chaine n'est pas bonne";
+            }
         }
     }
     // ***************************************************************
+
+
+    // pseudo ( nom de l'organisation ) : Nettoyage et validation des données.
+    $pseudo = trim(filter_input(INPUT_POST, 'pseudo', FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES));
+
+    if(!empty($pseudo)){
+        $isOk = preg_match('/'.REGEXP_STR_NO_NUMBER.'/',$pseudo);
+        if(!$isOk){
+            $error["pseudo_error"] = "Le nom de l'organisation n'est pas au bon format !"; 
+        } else {
+            if(strlen($pseudo)<=1 || strlen($pseudo)>=100){
+                $error["pseudo_error"] = "La longueur de chaine n'est pas bonne";
+            }
+        }
+    }
+ 
+    
+
+    // phone ( numéro de téléphone ) : Nettoyage et validation des données.
+     $phone = trim(filter_input(INPUT_POST, 'phone'));
+     if (!preg_match('/'.REGEXP_PHONE.'/',$phone)) {
+         $error['phone_error'] = 'Le format n\'est pas bon !';
+     }
+    // ***************************************************************
+
+    
     
     // EMAIL
     // Nettoyage et vérification
